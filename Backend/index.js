@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const routes = require("./Routes")
 
 mongoose
-    .connect("mongodb+srv://admin:Ri7IF3MEYbEpzLxx@cluster0.339f25t.mongodb.net/?retryWrites=true&w=majority")
+    //url
     .then(() => {
         const app = express()
         app.use("/api", routes)
