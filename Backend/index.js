@@ -1,6 +1,15 @@
 const express = require ("express")
-const app = express()
+const mongoose = require("mongoose")
+const routes = require("./Routes")
 
-app.listen(1000, ()=>{
-    console.log("Server has started!!")
-})
+mongoose
+    .connect("mongodb+srv://admin:Ri7IF3MEYbEpzLxx@cluster0.339f25t.mongodb.net/?retryWrites=true&w=majority")
+    .then(() => {
+        const app = express()
+        app.use("/api", routes)
+
+        app.listen(1000, () => {
+            console.log("Database connected!")
+        })
+    })
+    
