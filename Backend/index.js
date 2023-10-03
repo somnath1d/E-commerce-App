@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const routes = require("./Routes")
 
 mongoose
-    //url
+
     .then(() => {
         const app = express()
         app.use("/api", routes)
